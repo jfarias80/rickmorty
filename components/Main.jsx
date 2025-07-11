@@ -22,7 +22,7 @@ export function Main() {
             <FlatList
                 data={personajes}
                 keyExtractor={(item) => item.id.toString()}
-                renderItem={({item, index}) => (
+                renderItem={({item, index}) => (                    
                     <CharacterCard character={item} index={index}/>
                 )}>
             </FlatList>            
