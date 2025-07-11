@@ -1,13 +1,13 @@
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
-    return (        
+    return (
         <Stack>
-            <Stack.Screen name="index" 
-                options={{ headerShown: false }} /> 
+            <Stack.Screen name="index"
+                options={{ headerShown: false }} />
 
-            <Stack.Screen name="about" 
-                options={{ 
+            <Stack.Screen name="about"
+                options={{
                     title: 'Acerca de',
                     headerStyle: {
                         backgroundColor: '#333',
@@ -16,8 +16,23 @@ export default function RootLayout() {
                     headerTitleStyle: {
                         fontWeight: 'bold',
                     },
-                }} 
+                }}
             />
+            <Stack.Screen
+                name="[id]"
+                options={{
+                    title: 'Detalles del Episodio',
+                    headerStyle: {
+                        backgroundColor: '#333',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    },
+                }}
+            />
+
         </Stack>
+
     );
 }

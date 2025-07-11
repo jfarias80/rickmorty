@@ -8,17 +8,25 @@ export default function Index() {
     return (
         <View style={styles.container}>
             <StatusBar style="light" />
-            <Logo style={styles.logo} />
-            <br></br>
-            <Link href="/about" asChild>
-                <TouchableOpacity style={styles.aboutButton}>
-                    <Text>Acerca de</Text>
-                </TouchableOpacity>
-            </Link>
+            <View style={styles.logo}>
+                <Logo />
+                <br></br>
+                <Link href="/about" asChild>
+                    <TouchableOpacity style={styles.aboutButton}>
+                        <Text>Acerca de</Text>
+                    </TouchableOpacity>
+                </Link>
+            </View>
+
             <br></br>
             <Text style={styles.header}>🌌 Rick & Morty Universe</Text>
+
+            <View>
+                
             
-            <Main />            
+                <Main />            
+            </View>
+            
         </View>
         
     );
