@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { CharacterCard } from "./CharacterCard";
-import { ScrollView } from "react-native";
 import { getPersonajes } from "../lib/rickMorty";
-import { ActivityIndicator, FlatList } from "react-native-web";
+import { ActivityIndicator, FlatList } from "react-native";
 
 export function Main() {
     const [personajes, setPersonajes] = useState([]);        
@@ -23,7 +22,9 @@ export function Main() {
             <FlatList
                 data={personajes}
                 keyExtractor={(item) => item.id.toString()}
-                renderItem={(item, index) => (<CharacterCard index={index} character={item}/>)}>
+                renderItem={({item, index}) => (
+                    <CharacterCard character={item} index={index}/>
+                )}>
             </FlatList>            
         )}
         </>
