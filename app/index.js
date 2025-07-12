@@ -17,27 +17,24 @@ export default function Index() {
                     </TouchableOpacity>
                 </Link>
             </View>
-
             <br></br>
             <Text style={styles.header}>🌌 Rick & Morty Universe</Text>
-
-            <View>
-                
             
-                <Main />            
-            </View>
+            <Main />
             
         </View>
+       
         
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
+    container: {        
         backgroundColor: '#1e1e1e',
         paddingVertical: 30,
         paddingHorizontal: 10,
         alignItems: 'center',
+        flex: 1
     },
     header: {
         color: '#00ffcc',

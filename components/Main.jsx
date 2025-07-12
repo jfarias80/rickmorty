@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CharacterCard } from "./CharacterCard";
 import { getPersonajes } from "../lib/rickMorty";
 import { ActivityIndicator, FlatList } from "react-native";
+import { SafeAreaView } from "react-native";
 
 export function Main() {
     const [personajes, setPersonajes] = useState([]);        
@@ -16,17 +17,17 @@ export function Main() {
 
     return  (
         <>
-        {personajes.length === 0 ? (
-            <ActivityIndicator size={"large"}/>
-        ):( 
-            <FlatList
-                data={personajes}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({item, index}) => (                    
-                    <CharacterCard character={item} index={index}/>
-                )}>
-            </FlatList>            
-        )}
+            {personajes.length === 0 ? (
+                <ActivityIndicator size={"large"}/>
+            ):( 
+                    <FlatList
+                        data={personajes}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({item, index}) => (                    
+                            <CharacterCard character={item} index={index}/>
+                        )}>
+                    </FlatList>            
+            )}
         </>
     );
 }

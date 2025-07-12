@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Text, View } from "react-native-web";
+import { StyleSheet, Image, Text, View } from "react-native";
 
 export function CharacterCard({character}) {
     return (
