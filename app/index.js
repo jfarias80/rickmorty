@@ -43,11 +43,23 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     logo: {
-        backgroundColor: '#333',
-        padding: 3,
+        backgroundColor: '#333',        
+        paddingVertical: 20,
+        paddingHorizontal: 20,
+        alignItems: 'center',
+        //justifyContent: 'center',
+        //position: 'relative',
     },
     aboutButton: {
-        backgroundColor: '#ff9900ff',
+        //position: 'absolute',
+        top: 20,
+        right: 5,
+        backgroundColor: '#00ffcc',
+        paddingHorizontal: 12,
+        paddingVertical: 8,
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.3)',
     }
 
 });

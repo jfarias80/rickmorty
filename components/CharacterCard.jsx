@@ -1,21 +1,39 @@
-import { StyleSheet, Image, Text, View } from "react-native";
+import { StyleSheet, Image, Text, View, TouchableOpacity } from "react-native";
+import { router } from 'expo-router';
 
-export function CharacterCard({character}) {
-    return (
-        <View style={styles.card} key={character.id}>
-            <Image style={styles.image} source={{ uri: character.image }} />
-            <Text style={styles.name}>{character.name}</Text>
-            <Text style={styles.info}>{character.species} | {character.status}</Text>
-            <Text style={styles.info}>Gender: {character.gender}</Text>
-        </View>
-    );
+export function CharacterCard({ character }) {
+
+  const getEpisodeId = (episodeUrl) => {
+    const parts = episodeUrl.split('/');
+    return parts[parts.length - 1];
+  };
+
+  const handleImagePress = () => {
+    if (character.episode && character.episode.length > 0) {
+      const firstEpisodeUrl = character.episode[0];
+      const episodeId = getEpisodeId(firstEpisodeUrl);
+      router.push(`/${episodeId}`);
+    }
+  };
+
+
+  return (
+    <View style={styles.card} key={character.id}>
+      <TouchableOpacity onPress={handleImagePress}>
+        <Image style={styles.image} source={{ uri: character.image }} />
+      </TouchableOpacity>
+      <Text style={styles.name}>{character.name}</Text>
+      <Text style={styles.info}>{character.species} | {character.status}</Text>
+      <Text style={styles.info}>Gender: {character.gender}</Text>
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({  
+const styles = StyleSheet.create({
   card: {
     backgroundColor: '#2e2e2e',
     borderRadius: 12,
-    padding: 20,    
+    padding: 20,
     margin: 20,
     alignItems: 'center',
     width: 500,
@@ -42,5 +60,5 @@ const styles = StyleSheet.create({
   info: {
     fontSize: 14,
     color: '#aaa',
-  },  
+  },
 });
